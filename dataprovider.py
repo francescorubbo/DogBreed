@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader
 
 def loadlabels(num_classes=120):
     labels = pd.read_csv('data/labels.csv')
-    sample_submission = pd.read_csv('data/sample_submission.csv')
     
     selected_breed_list = list(labels.groupby('breed').count().sort_values(by='id', ascending=False).head(num_classes).index)
     labels = labels[labels['breed'].isin(selected_breed_list)]
