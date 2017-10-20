@@ -1,5 +1,5 @@
 NUM_CLASSES = 120
-MODELNAME = 'resnet18'
+MODELNAME = 'resnet152'
 
 import torch
 model = torch.load('models/'+MODELNAME+'_nclasses%s.pth'%NUM_CLASSES)
@@ -29,7 +29,7 @@ import pandas as pd
 testdf = pd.read_pickle('testlabels_%s.pkl'%NUM_CLASSES)
 testdf['label'] = ys
 testdf['output'] = preds
-testdf.to_pickle('testdf.pkl')
+testdf.to_pickle('testdf_%s.pkl'%MODELNAME)
 
 #df = pd.DataFrame({'label':ys,'output':preds})
 #df.to_pickle('testdf.pkl')
