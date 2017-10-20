@@ -1,5 +1,5 @@
 NUM_CLASSES = 120
-MODELNAME = 'resnet18'
+MODELNAME = 'resnet152'
 
 import torchvision.models as models
 modelsdict = {}
